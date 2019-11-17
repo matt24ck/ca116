@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+
+a = []
+s = raw_input()
+while s != "end":
+    a.append(int(s))
+    s = raw_input()
+i = 0
+while i < len(a):
+    j = i + 1
+    p = i
+    while j < len(a):
+        if a[j] < a[p]:
+            p = j
+        j += 1
+
+    tmp = a[i]
+    a[i] = a[p]
+    a[p] = tmp
+    i += 1
+median = (len(a) / 2)
+print a[median]
